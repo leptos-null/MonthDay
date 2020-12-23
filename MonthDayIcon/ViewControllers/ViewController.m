@@ -95,6 +95,7 @@ CGPoint CGPointPolarCenter(CGFloat radius, double angle, CGPoint center) {
     NSArray<NSString *> *const fillIdioms = @[
         @"iphone",
         @"ipad",
+        @"watch", // works fine, but App Store requires fill
         @"ios-marketing",
         @"watch-marketing"
     ];
