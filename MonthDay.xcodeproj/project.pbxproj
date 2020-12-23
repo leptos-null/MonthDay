@@ -1,0 +1,707 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA3B442122AF0B0F00217CF3 /* nanoMonthDay.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FA3B442022AF0B0F00217CF3 /* nanoMonthDay.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA3B442722AF0B0F00217CF3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3B442522AF0B0F00217CF3 /* Interface.storyboard */; };
+		FA3B442922AF0B1200217CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3B442822AF0B1200217CF3 /* Assets.xcassets */; };
+		FA3B443022AF0B1200217CF3 /* nanoMonthDayExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA3B442F22AF0B1200217CF3 /* nanoMonthDayExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA3B443622AF0B1200217CF3 /* MDInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3B443522AF0B1200217CF3 /* MDInterfaceController.m */; };
+		FA3B443922AF0B1200217CF3 /* MDExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3B443822AF0B1200217CF3 /* MDExtensionDelegate.m */; };
+		FA3B443C22AF0B1200217CF3 /* MDComplicationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3B443B22AF0B1200217CF3 /* MDComplicationSource.m */; };
+		FAC7AEA92591128F002FA6B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7AEA82591128F002FA6B4 /* AppDelegate.m */; };
+		FAC7AEAF2591128F002FA6B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7AEAE2591128F002FA6B4 /* ViewController.m */; };
+		FAC7AEB22591128F002FA6B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC7AEB02591128F002FA6B4 /* Main.storyboard */; };
+		FAC7AEB725911290002FA6B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC7AEB525911290002FA6B4 /* LaunchScreen.storyboard */; };
+		FAC7AEBA25911290002FA6B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC7AEB925911290002FA6B4 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA3B442222AF0B0F00217CF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA3B441622AF0B0F00217CF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA3B441F22AF0B0F00217CF3;
+			remoteInfo = "MonthDay WatchKit App";
+		};
+		FA3B443122AF0B1200217CF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA3B441622AF0B0F00217CF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA3B442E22AF0B1200217CF3;
+			remoteInfo = "MonthDay WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA3B444522AF0B1300217CF3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FA3B443022AF0B1200217CF3 /* nanoMonthDayExt.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA3B444922AF0B1300217CF3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FA3B442122AF0B0F00217CF3 /* nanoMonthDay.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FA3B441C22AF0B0F00217CF3 /* MonthDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonthDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3B442022AF0B0F00217CF3 /* nanoMonthDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanoMonthDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3B442622AF0B0F00217CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		FA3B442822AF0B1200217CF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA3B442A22AF0B1200217CF3 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		FA3B442F22AF0B1200217CF3 /* nanoMonthDayExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = nanoMonthDayExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3B443422AF0B1200217CF3 /* MDInterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDInterfaceController.h; sourceTree = "<group>"; };
+		FA3B443522AF0B1200217CF3 /* MDInterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDInterfaceController.m; sourceTree = "<group>"; };
+		FA3B443722AF0B1200217CF3 /* MDExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDExtensionDelegate.h; sourceTree = "<group>"; };
+		FA3B443822AF0B1200217CF3 /* MDExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDExtensionDelegate.m; sourceTree = "<group>"; };
+		FA3B443A22AF0B1200217CF3 /* MDComplicationSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDComplicationSource.h; sourceTree = "<group>"; };
+		FA3B443B22AF0B1200217CF3 /* MDComplicationSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDComplicationSource.m; sourceTree = "<group>"; };
+		FA3B443F22AF0B1300217CF3 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		FAC7AEA52591128F002FA6B4 /* MonthDayIcon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonthDayIcon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC7AEA72591128F002FA6B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FAC7AEA82591128F002FA6B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FAC7AEAD2591128F002FA6B4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FAC7AEAE2591128F002FA6B4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FAC7AEB12591128F002FA6B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FAC7AEB625911290002FA6B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FAC7AEB825911290002FA6B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC7AEB925911290002FA6B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA3B442C22AF0B1200217CF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC7AEA22591128F002FA6B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA3B441522AF0B0F00217CF3 = {
+			isa = PBXGroup;
+			children = (
+				FA3B442422AF0B0F00217CF3 /* nanoMonthDay */,
+				FA3B443322AF0B1200217CF3 /* nanoMonthDayExt */,
+				FAC7AEA62591128F002FA6B4 /* MonthDayIcon */,
+				FA3B441D22AF0B0F00217CF3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA3B441D22AF0B0F00217CF3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA3B441C22AF0B0F00217CF3 /* MonthDay.app */,
+				FA3B442022AF0B0F00217CF3 /* nanoMonthDay.app */,
+				FA3B442F22AF0B1200217CF3 /* nanoMonthDayExt.appex */,
+				FAC7AEA52591128F002FA6B4 /* MonthDayIcon.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA3B442422AF0B0F00217CF3 /* nanoMonthDay */ = {
+			isa = PBXGroup;
+			children = (
+				FA3B442522AF0B0F00217CF3 /* Interface.storyboard */,
+				FA3B442822AF0B1200217CF3 /* Assets.xcassets */,
+				FA3B442A22AF0B1200217CF3 /* Info.plist */,
+			);
+			path = nanoMonthDay;
+			sourceTree = "<group>";
+		};
+		FA3B443322AF0B1200217CF3 /* nanoMonthDayExt */ = {
+			isa = PBXGroup;
+			children = (
+				FA3B443722AF0B1200217CF3 /* MDExtensionDelegate.h */,
+				FA3B443822AF0B1200217CF3 /* MDExtensionDelegate.m */,
+				FA3B443422AF0B1200217CF3 /* MDInterfaceController.h */,
+				FA3B443522AF0B1200217CF3 /* MDInterfaceController.m */,
+				FA3B443A22AF0B1200217CF3 /* MDComplicationSource.h */,
+				FA3B443B22AF0B1200217CF3 /* MDComplicationSource.m */,
+				FA3B443F22AF0B1300217CF3 /* Info.plist */,
+			);
+			path = nanoMonthDayExt;
+			sourceTree = "<group>";
+		};
+		FAC7AEA62591128F002FA6B4 /* MonthDayIcon */ = {
+			isa = PBXGroup;
+			children = (
+				FAC7AEF32591994E002FA6B4 /* AppDelegate */,
+				FAC7AEF82591997C002FA6B4 /* ViewControllers */,
+				FAC7AEB02591128F002FA6B4 /* Main.storyboard */,
+				FAC7AEB525911290002FA6B4 /* LaunchScreen.storyboard */,
+				FAC7AEB825911290002FA6B4 /* Info.plist */,
+				FAC7AEB925911290002FA6B4 /* main.m */,
+			);
+			path = MonthDayIcon;
+			sourceTree = "<group>";
+		};
+		FAC7AEF32591994E002FA6B4 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FAC7AEA72591128F002FA6B4 /* AppDelegate.h */,
+				FAC7AEA82591128F002FA6B4 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FAC7AEF82591997C002FA6B4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAC7AEAD2591128F002FA6B4 /* ViewController.h */,
+				FAC7AEAE2591128F002FA6B4 /* ViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA3B441B22AF0B0F00217CF3 /* MonthDay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA3B444A22AF0B1300217CF3 /* Build configuration list for PBXNativeTarget "MonthDay" */;
+			buildPhases = (
+				FA3B441A22AF0B0F00217CF3 /* Resources */,
+				FA3B444922AF0B1300217CF3 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA3B442322AF0B0F00217CF3 /* PBXTargetDependency */,
+			);
+			name = MonthDay;
+			productName = MonthDay;
+			productReference = FA3B441C22AF0B0F00217CF3 /* MonthDay.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		FA3B441F22AF0B0F00217CF3 /* nanoMonthDay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA3B444622AF0B1300217CF3 /* Build configuration list for PBXNativeTarget "nanoMonthDay" */;
+			buildPhases = (
+				FA3B441E22AF0B0F00217CF3 /* Resources */,
+				FA3B444522AF0B1300217CF3 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA3B443222AF0B1200217CF3 /* PBXTargetDependency */,
+			);
+			name = nanoMonthDay;
+			productName = "MonthDay WatchKit App";
+			productReference = FA3B442022AF0B0F00217CF3 /* nanoMonthDay.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		FA3B442E22AF0B1200217CF3 /* nanoMonthDayExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA3B444222AF0B1300217CF3 /* Build configuration list for PBXNativeTarget "nanoMonthDayExt" */;
+			buildPhases = (
+				FA3B442B22AF0B1200217CF3 /* Sources */,
+				FA3B442C22AF0B1200217CF3 /* Frameworks */,
+				FA3B442D22AF0B1200217CF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nanoMonthDayExt;
+			productName = "MonthDay WatchKit Extension";
+			productReference = FA3B442F22AF0B1200217CF3 /* nanoMonthDayExt.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		FAC7AEA42591128F002FA6B4 /* MonthDayIcon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAC7AEBD25911290002FA6B4 /* Build configuration list for PBXNativeTarget "MonthDayIcon" */;
+			buildPhases = (
+				FAC7AEA12591128F002FA6B4 /* Sources */,
+				FAC7AEA22591128F002FA6B4 /* Frameworks */,
+				FAC7AEA32591128F002FA6B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonthDayIcon;
+			productName = MonthDayIcon;
+			productReference = FAC7AEA52591128F002FA6B4 /* MonthDayIcon.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA3B441622AF0B0F00217CF3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MD;
+				LastUpgradeCheck = 1230;
+				ORGANIZATIONNAME = Leptos;
+				TargetAttributes = {
+					FA3B441B22AF0B0F00217CF3 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					FA3B441F22AF0B0F00217CF3 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					FA3B442E22AF0B1200217CF3 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					FAC7AEA42591128F002FA6B4 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = FA3B441922AF0B0F00217CF3 /* Build configuration list for PBXProject "MonthDay" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA3B441522AF0B0F00217CF3;
+			productRefGroup = FA3B441D22AF0B0F00217CF3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA3B441B22AF0B0F00217CF3 /* MonthDay */,
+				FA3B441F22AF0B0F00217CF3 /* nanoMonthDay */,
+				FA3B442E22AF0B1200217CF3 /* nanoMonthDayExt */,
+				FAC7AEA42591128F002FA6B4 /* MonthDayIcon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA3B441A22AF0B0F00217CF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA3B441E22AF0B0F00217CF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3B442922AF0B1200217CF3 /* Assets.xcassets in Resources */,
+				FA3B442722AF0B0F00217CF3 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA3B442D22AF0B1200217CF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC7AEA32591128F002FA6B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC7AEB725911290002FA6B4 /* LaunchScreen.storyboard in Resources */,
+				FAC7AEB22591128F002FA6B4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA3B442B22AF0B1200217CF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3B443C22AF0B1200217CF3 /* MDComplicationSource.m in Sources */,
+				FA3B443922AF0B1200217CF3 /* MDExtensionDelegate.m in Sources */,
+				FA3B443622AF0B1200217CF3 /* MDInterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAC7AEA12591128F002FA6B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC7AEAF2591128F002FA6B4 /* ViewController.m in Sources */,
+				FAC7AEA92591128F002FA6B4 /* AppDelegate.m in Sources */,
+				FAC7AEBA25911290002FA6B4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA3B442322AF0B0F00217CF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA3B441F22AF0B0F00217CF3 /* nanoMonthDay */;
+			targetProxy = FA3B442222AF0B0F00217CF3 /* PBXContainerItemProxy */;
+		};
+		FA3B443222AF0B1200217CF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA3B442E22AF0B1200217CF3 /* nanoMonthDayExt */;
+			targetProxy = FA3B443122AF0B1200217CF3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA3B442522AF0B0F00217CF3 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA3B442622AF0B0F00217CF3 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		FAC7AEB02591128F002FA6B4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAC7AEB12591128F002FA6B4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FAC7AEB525911290002FA6B4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAC7AEB625911290002FA6B4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA3B444022AF0B1300217CF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_FRAMEWORK_INCLUDE_PRIVATE_FROM_PUBLIC = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FA3B444122AF0B1300217CF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_FRAMEWORK_INCLUDE_PRIVATE_FROM_PUBLIC = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA3B444322AF0B1300217CF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				INFOPLIST_FILE = nanoMonthDayExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.MonthDay.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		FA3B444422AF0B1300217CF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				INFOPLIST_FILE = nanoMonthDayExt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.MonthDay.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		FA3B444722AF0B1300217CF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				IBSC_MODULE = MonthDay_WatchKit_Extension;
+				INFOPLIST_FILE = nanoMonthDay/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.MonthDay.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		FA3B444822AF0B1300217CF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				IBSC_MODULE = MonthDay_WatchKit_Extension;
+				INFOPLIST_FILE = nanoMonthDay/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.MonthDay.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		FA3B444B22AF0B1300217CF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.MonthDay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FA3B444C22AF0B1300217CF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.MonthDay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FAC7AEBB25911290002FA6B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MonthDayIcon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.MonthDayIcon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 6;
+			};
+			name = Debug;
+		};
+		FAC7AEBC25911290002FA6B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MonthDayIcon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.MonthDayIcon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA3B441922AF0B0F00217CF3 /* Build configuration list for PBXProject "MonthDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA3B444022AF0B1300217CF3 /* Debug */,
+				FA3B444122AF0B1300217CF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA3B444222AF0B1300217CF3 /* Build configuration list for PBXNativeTarget "nanoMonthDayExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA3B444322AF0B1300217CF3 /* Debug */,
+				FA3B444422AF0B1300217CF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA3B444622AF0B1300217CF3 /* Build configuration list for PBXNativeTarget "nanoMonthDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA3B444722AF0B1300217CF3 /* Debug */,
+				FA3B444822AF0B1300217CF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA3B444A22AF0B1300217CF3 /* Build configuration list for PBXNativeTarget "MonthDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA3B444B22AF0B1300217CF3 /* Debug */,
+				FA3B444C22AF0B1300217CF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAC7AEBD25911290002FA6B4 /* Build configuration list for PBXNativeTarget "MonthDayIcon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC7AEBB25911290002FA6B4 /* Debug */,
+				FAC7AEBC25911290002FA6B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA3B441622AF0B0F00217CF3 /* Project object */;
+}
