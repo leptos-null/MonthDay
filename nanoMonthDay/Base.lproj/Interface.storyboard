@@ -12,8 +12,8 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="MDInterfaceController">
                     <items>
-                        <dateLabel alignment="center" verticalAlignment="center" numberOfLines="0" id="cKg-sa-M0D">
-                            <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                        <dateLabel alignment="center" verticalAlignment="center" id="cKg-sa-M0D">
+                            <fontDescription key="font" name=".AppleSystemUIFontCompactRounded-Semibold" family=".AppleSystemUIFontCompactRounded" pointSize="40"/>
                             <dateFormatterStyle key="dateStyle" short="YES"/>
                         </dateLabel>
                     </items>
