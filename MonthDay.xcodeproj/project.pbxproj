@@ -77,6 +77,7 @@
 		FA3B443A22AF0B1200217CF3 /* MDComplicationSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDComplicationSource.h; sourceTree = "<group>"; };
 		FA3B443B22AF0B1200217CF3 /* MDComplicationSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDComplicationSource.m; sourceTree = "<group>"; };
 		FA3B443F22AF0B1300217CF3 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		FA97B96425955AFD004C8755 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		FAC7AEA52591128F002FA6B4 /* MonthDayIcon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonthDayIcon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC7AEA72591128F002FA6B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FAC7AEA82591128F002FA6B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		FA3B441522AF0B0F00217CF3 = {
 			isa = PBXGroup;
 			children = (
+				FA97B96325955AFD004C8755 /* MonthDay */,
 				FA3B442422AF0B0F00217CF3 /* nanoMonthDay */,
 				FA3B443322AF0B1200217CF3 /* nanoMonthDayExt */,
 				FAC7AEA62591128F002FA6B4 /* MonthDayIcon */,
@@ -149,6 +151,14 @@
 				FA3B443F22AF0B1300217CF3 /* Info.plist */,
 			);
 			path = nanoMonthDayExt;
+			sourceTree = "<group>";
+		};
+		FA97B96325955AFD004C8755 /* MonthDay */ = {
+			isa = PBXGroup;
+			children = (
+				FA97B96425955AFD004C8755 /* Info.plist */,
+			);
+			path = MonthDay;
 			sourceTree = "<group>";
 		};
 		FAC7AEA62591128F002FA6B4 /* MonthDayIcon */ = {
@@ -431,7 +441,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -497,7 +507,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -602,6 +612,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				INFOPLIST_FILE = MonthDay/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.MonthDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -612,6 +623,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				INFOPLIST_FILE = MonthDay/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = null.leptos.MonthDay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
