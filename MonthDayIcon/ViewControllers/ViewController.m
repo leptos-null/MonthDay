@@ -26,7 +26,7 @@ CGPoint CGPointPolarCenter(CGFloat radius, double angle, CGPoint center) {
     UIGraphicsBeginImageContextWithOptions(fullFrame.size, NO, scale);
     
     if (fillBackground) {
-        [[UIColor blackColor] setFill];
+        [[UIColor systemBackgroundColor] setFill];
         [[UIBezierPath bezierPathWithRect:fullFrame] fill];
     }
     
