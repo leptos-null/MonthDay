@@ -26,8 +26,14 @@ CGPoint CGPointPolarCenter(CGFloat radius, double angle, CGPoint center) {
     UIGraphicsBeginImageContextWithOptions(fullFrame.size, NO, scale);
     
     if (fillBackground) {
-        [[UIColor systemBackgroundColor] setFill];
+        [[UIColor blackColor] setFill];
         [[UIBezierPath bezierPathWithRect:fullFrame] fill];
+        
+        [[UIColor whiteColor] setStroke];
+        CGFloat const strokeWidth = dimension/36;
+        UIBezierPath *circle = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(fullFrame, strokeWidth/2, strokeWidth/2)];
+        circle.lineWidth = strokeWidth;
+        [circle stroke];
     }
     
     UIColor *const textColor = UIColor.whiteColor;
