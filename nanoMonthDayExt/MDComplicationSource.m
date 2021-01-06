@@ -67,6 +67,12 @@
             tmp.line2TextProvider = numericalProvider;
             ret = tmp;
         } break;
+        case CLKComplicationFamilyModularLarge: {
+            CLKComplicationTemplateModularLargeTallBody *tmp = [CLKComplicationTemplateModularLargeTallBody new];
+            tmp.headerTextProvider = weekdayProvider;
+            tmp.bodyTextProvider = numericalProvider;
+            ret = tmp;
+        } break;
         case CLKComplicationFamilyUtilitarianSmall:
         case CLKComplicationFamilyUtilitarianSmallFlat: {
             CLKComplicationTemplateUtilitarianSmallFlat *tmp =  [CLKComplicationTemplateUtilitarianSmallFlat new];
@@ -78,19 +84,40 @@
             tmp.textProvider = numericalProvider;
             ret = tmp;
         } break;
+        case CLKComplicationFamilyCircularSmall: {
+            CLKComplicationTemplateCircularSmallStackText *tmp = [CLKComplicationTemplateCircularSmallStackText new];
+            tmp.line1TextProvider = weekdayProvider;
+            tmp.line2TextProvider = numericalProvider;
+            ret = tmp;
+        } break;
+        case CLKComplicationFamilyExtraLarge: {
+            CLKComplicationTemplateExtraLargeStackText *tmp = [CLKComplicationTemplateExtraLargeStackText new];
+            tmp.line1TextProvider = weekdayProvider;
+            tmp.line2TextProvider = numericalProvider;
+            ret = tmp;
+        } break;
         case CLKComplicationFamilyGraphicCorner: {
             CLKComplicationTemplateGraphicCornerStackText *tmp = [CLKComplicationTemplateGraphicCornerStackText new];
             tmp.innerTextProvider = weekdayProvider;
             tmp.outerTextProvider = numericalProvider;
             ret = tmp;
         } break;
-        case CLKComplicationFamilyCircularSmall:
-        case CLKComplicationFamilyModularLarge:
-        case CLKComplicationFamilyExtraLarge:
+        case CLKComplicationFamilyGraphicCircular: {
+            CLKComplicationTemplateGraphicCircularStackText *tmp = [CLKComplicationTemplateGraphicCircularStackText new];
+            tmp.line1TextProvider = weekdayProvider;
+            tmp.line2TextProvider = numericalProvider;
+            ret = tmp;
+        } break;
+        case CLKComplicationFamilyGraphicExtraLarge: {
+            if (@available(watchOS 7.0, *)) {
+                CLKComplicationTemplateGraphicExtraLargeCircularStackText *tmp = [CLKComplicationTemplateGraphicExtraLargeCircularStackText new];
+                tmp.line1TextProvider = weekdayProvider;
+                tmp.line2TextProvider = numericalProvider;
+                ret = tmp;
+            }
+        } break;
         case CLKComplicationFamilyGraphicBezel:
-        case CLKComplicationFamilyGraphicCircular:
         case CLKComplicationFamilyGraphicRectangular:
-        case CLKComplicationFamilyGraphicExtraLarge:
             NSLog(@"Unsupported case: %ld", (long)family);
             break;
         default:

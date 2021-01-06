@@ -25,10 +25,15 @@
 	<key>CLKComplicationSupportedFamilies</key>
 	<array>
 		<string>CLKComplicationFamilyModularSmall</string>
+		<string>CLKComplicationFamilyModularLarge</string>
 		<string>CLKComplicationFamilyUtilitarianSmall</string>
 		<string>CLKComplicationFamilyUtilitarianSmallFlat</string>
 		<string>CLKComplicationFamilyUtilitarianLarge</string>
+		<string>CLKComplicationFamilyCircularSmall</string>
+		<string>CLKComplicationFamilyExtraLarge</string>
 		<string>CLKComplicationFamilyGraphicCorner</string>
+		<string>CLKComplicationFamilyGraphicCircular</string>
+		<string>CLKComplicationFamilyGraphicExtraLarge</string>
 	</array>
 	<key>NSExtension</key>
 	<dict>
