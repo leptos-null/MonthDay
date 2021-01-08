@@ -8,6 +8,9 @@
 
 #import "MDComplicationSource.h"
 
+NSString *const MDComplicationIdentifierSwapped = @"null.leptos.MonthDay.complication.swapped";
+NSString *const MDComplicationIdentifierDateOnly = @"null.leptos.MonthDay.complication.dateOnly";
+
 @implementation MDComplicationSource {
     /// Source-of-truth calendar
     NSCalendar *_calendar;
@@ -52,67 +55,92 @@
     }
 }
 
-- (CLKComplicationTemplate *)_templateForDate:(NSDate *)date family:(CLKComplicationFamily)family {
+- (CLKComplicationTemplate *)_templateForDate:(NSDate *)date complication:(CLKComplication *)complication {
+    CLKComplicationFamily const family = complication.family;
+    NSString *complicationIdentifier = nil;
+    if (@available(watchOS 7.0, *)) {
+        complicationIdentifier = complication.identifier;
+    }
+    BOOL const isSwapped = [complicationIdentifier isEqualToString:MDComplicationIdentifierSwapped];
+    BOOL const isDateOnly = [complicationIdentifier isEqualToString:MDComplicationIdentifierDateOnly];
+    
     NSString *shortStyle = [_shortStyleFormatter stringFromDate:date];
     NSString *dayMonth = [_dayMonthFormatter stringFromDate:date];
     
     CLKTextProvider *numericalProvider = [CLKSimpleTextProvider textProviderWithText:shortStyle shortText:dayMonth];
     CLKTextProvider *weekdayProvider =  [CLKDateTextProvider textProviderWithDate:date units:NSCalendarUnitWeekday];
     
+    CLKTextProvider *line1TextProvider = isSwapped ? numericalProvider : weekdayProvider;
+    CLKTextProvider *line2TextProvider = isSwapped ? weekdayProvider : numericalProvider;
+    
+    CLKTextProvider *combinedProvider = [CLKTextProvider textProviderWithFormat:@"%@ · %@", line1TextProvider, line2TextProvider];
+    
     CLKComplicationTemplate *ret = nil;
     switch (family) {
         case CLKComplicationFamilyModularSmall: {
             CLKComplicationTemplateModularSmallStackText *tmp = [CLKComplicationTemplateModularSmallStackText new];
-            tmp.line1TextProvider = weekdayProvider;
-            tmp.line2TextProvider = numericalProvider;
+            tmp.line1TextProvider = line1TextProvider;
+            tmp.line2TextProvider = line2TextProvider;
             ret = tmp;
         } break;
         case CLKComplicationFamilyModularLarge: {
             CLKComplicationTemplateModularLargeTallBody *tmp = [CLKComplicationTemplateModularLargeTallBody new];
-            tmp.headerTextProvider = weekdayProvider;
-            tmp.bodyTextProvider = numericalProvider;
+            tmp.headerTextProvider = line1TextProvider;
+            tmp.bodyTextProvider = line2TextProvider;
             ret = tmp;
         } break;
         case CLKComplicationFamilyUtilitarianSmall:
         case CLKComplicationFamilyUtilitarianSmallFlat: {
             CLKComplicationTemplateUtilitarianSmallFlat *tmp =  [CLKComplicationTemplateUtilitarianSmallFlat new];
-            tmp.textProvider = numericalProvider;
+            tmp.textProvider = isDateOnly ? numericalProvider : combinedProvider;
             ret = tmp;
         } break;
         case CLKComplicationFamilyUtilitarianLarge: {
             CLKComplicationTemplateUtilitarianLargeFlat *tmp =  [CLKComplicationTemplateUtilitarianLargeFlat new];
-            tmp.textProvider = numericalProvider;
+            tmp.textProvider = isDateOnly ? numericalProvider : combinedProvider;
             ret = tmp;
         } break;
         case CLKComplicationFamilyCircularSmall: {
-            CLKComplicationTemplateCircularSmallStackText *tmp = [CLKComplicationTemplateCircularSmallStackText new];
-            tmp.line1TextProvider = weekdayProvider;
-            tmp.line2TextProvider = numericalProvider;
-            ret = tmp;
+            if (isDateOnly) {
+                CLKComplicationTemplateCircularSmallSimpleText *tmp = [CLKComplicationTemplateCircularSmallSimpleText new];
+                tmp.textProvider = numericalProvider;
+                ret = tmp;
+            } else {
+                CLKComplicationTemplateCircularSmallStackText *tmp = [CLKComplicationTemplateCircularSmallStackText new];
+                tmp.line1TextProvider = line1TextProvider;
+                tmp.line2TextProvider = line2TextProvider;
+                ret = tmp;
+            }
         } break;
         case CLKComplicationFamilyExtraLarge: {
-            CLKComplicationTemplateExtraLargeStackText *tmp = [CLKComplicationTemplateExtraLargeStackText new];
-            tmp.line1TextProvider = weekdayProvider;
-            tmp.line2TextProvider = numericalProvider;
-            ret = tmp;
+            if (isDateOnly) {
+                CLKComplicationTemplateExtraLargeSimpleText *tmp = [CLKComplicationTemplateExtraLargeSimpleText new];
+                tmp.textProvider = numericalProvider;
+                ret = tmp;
+            } else {
+                CLKComplicationTemplateExtraLargeStackText *tmp = [CLKComplicationTemplateExtraLargeStackText new];
+                tmp.line1TextProvider = line1TextProvider;
+                tmp.line2TextProvider = line2TextProvider;
+                ret = tmp;
+            }
         } break;
         case CLKComplicationFamilyGraphicCorner: {
             CLKComplicationTemplateGraphicCornerStackText *tmp = [CLKComplicationTemplateGraphicCornerStackText new];
-            tmp.innerTextProvider = weekdayProvider;
-            tmp.outerTextProvider = numericalProvider;
+            tmp.innerTextProvider = isSwapped ? numericalProvider : weekdayProvider;
+            tmp.outerTextProvider = isSwapped ? weekdayProvider : numericalProvider;
             ret = tmp;
         } break;
         case CLKComplicationFamilyGraphicCircular: {
             CLKComplicationTemplateGraphicCircularStackText *tmp = [CLKComplicationTemplateGraphicCircularStackText new];
-            tmp.line1TextProvider = weekdayProvider;
-            tmp.line2TextProvider = numericalProvider;
+            tmp.line1TextProvider = line1TextProvider;
+            tmp.line2TextProvider = line2TextProvider;
             ret = tmp;
         } break;
         case CLKComplicationFamilyGraphicExtraLarge: {
             if (@available(watchOS 7.0, *)) {
                 CLKComplicationTemplateGraphicExtraLargeCircularStackText *tmp = [CLKComplicationTemplateGraphicExtraLargeCircularStackText new];
-                tmp.line1TextProvider = weekdayProvider;
-                tmp.line2TextProvider = numericalProvider;
+                tmp.line1TextProvider = line1TextProvider;
+                tmp.line2TextProvider = line2TextProvider;
                 ret = tmp;
             }
         } break;
@@ -127,9 +155,47 @@
     return ret;
 }
 
-- (CLKComplicationTimelineEntry *)_timelineEntryForDate:(NSDate *)date family:(CLKComplicationFamily)family {
+- (CLKComplicationTimelineEntry *)_timelineEntryForDate:(NSDate *)date complication:(CLKComplication *)complication {
     NSDate *start = [_calendar startOfDayForDate:date];
-    return [CLKComplicationTimelineEntry entryWithDate:start complicationTemplate:[self _templateForDate:date family:family]];
+    return [CLKComplicationTimelineEntry entryWithDate:start complicationTemplate:[self _templateForDate:date complication:complication]];
+}
+
+- (void)getComplicationDescriptorsWithHandler:(void(^)(NSArray<CLKComplicationDescriptor *> *))handler API_AVAILABLE(watchos(7.0)) {
+    handler(@[
+        [[CLKComplicationDescriptor alloc] initWithIdentifier:CLKDefaultComplicationIdentifier displayName:@"Default" supportedFamilies:@[
+            @(CLKComplicationFamilyModularSmall),
+            @(CLKComplicationFamilyModularLarge),
+            @(CLKComplicationFamilyUtilitarianSmall),
+            @(CLKComplicationFamilyUtilitarianSmallFlat),
+            @(CLKComplicationFamilyUtilitarianLarge),
+            @(CLKComplicationFamilyCircularSmall),
+            @(CLKComplicationFamilyExtraLarge),
+            @(CLKComplicationFamilyGraphicCorner),
+            @(CLKComplicationFamilyGraphicCircular),
+            @(CLKComplicationFamilyGraphicExtraLarge)
+        ]],
+        
+        [[CLKComplicationDescriptor alloc] initWithIdentifier:MDComplicationIdentifierSwapped displayName:@"Swapped" supportedFamilies:@[
+            @(CLKComplicationFamilyModularSmall),
+            @(CLKComplicationFamilyModularLarge),
+            @(CLKComplicationFamilyUtilitarianSmall),
+            @(CLKComplicationFamilyUtilitarianSmallFlat),
+            @(CLKComplicationFamilyUtilitarianLarge),
+            @(CLKComplicationFamilyCircularSmall),
+            @(CLKComplicationFamilyExtraLarge),
+            @(CLKComplicationFamilyGraphicCorner),
+            @(CLKComplicationFamilyGraphicCircular),
+            @(CLKComplicationFamilyGraphicExtraLarge)
+        ]],
+        
+        [[CLKComplicationDescriptor alloc] initWithIdentifier:MDComplicationIdentifierDateOnly displayName:@"Date Only" supportedFamilies:@[
+            @(CLKComplicationFamilyUtilitarianSmall),
+            @(CLKComplicationFamilyUtilitarianSmallFlat),
+            @(CLKComplicationFamilyUtilitarianLarge),
+            @(CLKComplicationFamilyCircularSmall),
+            @(CLKComplicationFamilyExtraLarge),
+        ]],
+    ]);
 }
 
 // MARK: - Timeline Configuration
@@ -155,29 +221,27 @@
 
 - (void)getCurrentTimelineEntryForComplication:(CLKComplication *)complication
                                    withHandler:(void(^)(CLKComplicationTimelineEntry *entry))handler {
-    handler([self _timelineEntryForDate:[NSDate date] family:complication.family]);
+    handler([self _timelineEntryForDate:[NSDate date] complication:complication]);
 }
 
 - (void)getTimelineEntriesForComplication:(CLKComplication *)complication beforeDate:(NSDate *)date limit:(NSUInteger)limit
                               withHandler:(void(^)(NSArray<CLKComplicationTimelineEntry *> *entries))handler {
-    CLKComplicationFamily const complicationFamily = complication.family;
     NSMutableArray<CLKComplicationTimelineEntry *> *entries = [NSMutableArray arrayWithCapacity:limit];
     // assuming that date is not exactly between days, so add the given day to the timeline as well
     for (__typeof(limit) intern = 0; intern < limit; intern++) {
         NSDate *entryDate = [_calendar dateByAddingUnit:NSCalendarUnitDay value:(-intern) toDate:date options:0];
-        [entries addObject:[self _timelineEntryForDate:entryDate family:complicationFamily]];
+        [entries addObject:[self _timelineEntryForDate:entryDate complication:complication]];
     }
     handler([entries copy]);
 }
 
 - (void)getTimelineEntriesForComplication:(CLKComplication *)complication afterDate:(NSDate *)date limit:(NSUInteger)limit
                               withHandler:(void(^)(NSArray<CLKComplicationTimelineEntry *> *entries))handler {
-    CLKComplicationFamily const complicationFamily = complication.family;
     NSMutableArray<CLKComplicationTimelineEntry *> *entries = [NSMutableArray arrayWithCapacity:limit];
     // assuming that date is not exactly between days, so add the given day to the timeline as well
     for (__typeof(limit) intern = 0; intern < limit; intern++) {
         NSDate *entryDate = [_calendar dateByAddingUnit:NSCalendarUnitDay value:(+intern) toDate:date options:0];
-        [entries addObject:[self _timelineEntryForDate:entryDate family:complicationFamily]];
+        [entries addObject:[self _timelineEntryForDate:entryDate complication:complication]];
     }
     handler([entries copy]);
 }
@@ -200,7 +264,7 @@
         comps.minute = 9;
         comps.second = 30;
     });
-    handler([self _templateForDate:comps.date family:complication.family]);
+    handler([self _templateForDate:comps.date complication:complication]);
 }
 
 @end
