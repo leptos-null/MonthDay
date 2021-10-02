@@ -162,7 +162,7 @@ NSString *const MDComplicationIdentifierDateOnly = @"null.leptos.MonthDay.compli
 
 - (void)getComplicationDescriptorsWithHandler:(void(^)(NSArray<CLKComplicationDescriptor *> *))handler API_AVAILABLE(watchos(7.0)) {
     handler(@[
-        [[CLKComplicationDescriptor alloc] initWithIdentifier:CLKDefaultComplicationIdentifier displayName:@"Default" supportedFamilies:@[
+        [[CLKComplicationDescriptor alloc] initWithIdentifier:CLKDefaultComplicationIdentifier displayName:@"Date & Day" supportedFamilies:@[
             @(CLKComplicationFamilyModularSmall),
             @(CLKComplicationFamilyModularLarge),
             @(CLKComplicationFamilyUtilitarianSmall),
@@ -175,7 +175,7 @@ NSString *const MDComplicationIdentifierDateOnly = @"null.leptos.MonthDay.compli
             @(CLKComplicationFamilyGraphicExtraLarge)
         ]],
         
-        [[CLKComplicationDescriptor alloc] initWithIdentifier:MDComplicationIdentifierSwapped displayName:@"Swapped" supportedFamilies:@[
+        [[CLKComplicationDescriptor alloc] initWithIdentifier:MDComplicationIdentifierSwapped displayName:@"Day & Date" supportedFamilies:@[
             @(CLKComplicationFamilyModularSmall),
             @(CLKComplicationFamilyModularLarge),
             @(CLKComplicationFamilyUtilitarianSmall),
