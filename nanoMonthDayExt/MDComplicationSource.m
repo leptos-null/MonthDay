@@ -162,7 +162,10 @@ NSString *const MDComplicationIdentifierDateOnly = @"null.leptos.MonthDay.compli
 
 - (void)getComplicationDescriptorsWithHandler:(void(^)(NSArray<CLKComplicationDescriptor *> *))handler API_AVAILABLE(watchos(7.0)) {
     handler(@[
-        [[CLKComplicationDescriptor alloc] initWithIdentifier:CLKDefaultComplicationIdentifier displayName:@"Date & Day" supportedFamilies:@[
+        [[CLKComplicationDescriptor alloc] initWithIdentifier:CLKDefaultComplicationIdentifier
+                                                  displayName:NSLocalizedStringWithDefaultValue(@"DATE_AND_DAY", nil, NSBundle.mainBundle,
+        @"Date & Day", @"Title text for a configuration where dates are formatted with the numerical date followed by the day of the week")
+                                            supportedFamilies:@[
             @(CLKComplicationFamilyModularSmall),
             @(CLKComplicationFamilyModularLarge),
             @(CLKComplicationFamilyUtilitarianSmall),
@@ -175,7 +178,10 @@ NSString *const MDComplicationIdentifierDateOnly = @"null.leptos.MonthDay.compli
             @(CLKComplicationFamilyGraphicExtraLarge)
         ]],
         
-        [[CLKComplicationDescriptor alloc] initWithIdentifier:MDComplicationIdentifierSwapped displayName:@"Day & Date" supportedFamilies:@[
+        [[CLKComplicationDescriptor alloc] initWithIdentifier:MDComplicationIdentifierSwapped
+                                                  displayName:NSLocalizedStringWithDefaultValue(@"DAY_AND_DATE", nil, NSBundle.mainBundle,
+        @"Day & Date", @"Title text for a configuration where dates are formatted with the day of the week followed by the numerical date")
+                                            supportedFamilies:@[
             @(CLKComplicationFamilyModularSmall),
             @(CLKComplicationFamilyModularLarge),
             @(CLKComplicationFamilyUtilitarianSmall),
@@ -188,7 +194,10 @@ NSString *const MDComplicationIdentifierDateOnly = @"null.leptos.MonthDay.compli
             @(CLKComplicationFamilyGraphicExtraLarge)
         ]],
         
-        [[CLKComplicationDescriptor alloc] initWithIdentifier:MDComplicationIdentifierDateOnly displayName:@"Date Only" supportedFamilies:@[
+        [[CLKComplicationDescriptor alloc] initWithIdentifier:MDComplicationIdentifierDateOnly
+                                                  displayName:NSLocalizedStringWithDefaultValue(@"DATE_ONLY", nil, NSBundle.mainBundle,
+        @"Date Only", @"Title text for a configuration where dates are formatted with only the numerical date")
+                                            supportedFamilies:@[
             @(CLKComplicationFamilyUtilitarianSmall),
             @(CLKComplicationFamilyUtilitarianSmallFlat),
             @(CLKComplicationFamilyUtilitarianLarge),

@@ -1,0 +1,8 @@
+/* Title text for a configuration where dates are formatted with the numerical date followed by the day of the week */
+"DATE_AND_DAY" = "Date & Day";
+
+/* Title text for a configuration where dates are formatted with only the numerical date */
+"DATE_ONLY" = "Date Only";
+
+/* Title text for a configuration where dates are formatted with the day of the week followed by the numerical date */
+"DAY_AND_DATE" = "Day & Date";
