@@ -1,0 +1,8 @@
+/* Title text for a configuration where dates are formatted with the numerical date followed by the day of the week */
+"DATE_AND_DAY" = "تاريخ و يوم";
+
+/* Title text for a configuration where dates are formatted with only the numerical date */
+"DATE_ONLY" = "تاريخ فقط";
+
+/* Title text for a configuration where dates are formatted with the day of the week followed by the numerical date */
+"DAY_AND_DATE" = "يوم و تاريخ";

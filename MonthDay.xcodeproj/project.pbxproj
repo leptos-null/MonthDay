@@ -83,6 +83,15 @@
 		FA710C1E279343680045AA5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA710C23279343860045AA5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA710C28279343E90045AA5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA710C2A2793462E0045AA5B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA710C2B2793462E0045AA5B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA710C2C2793462E0045AA5B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA710C2D279346380045AA5B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA710C2E279346380045AA5B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA710C2F279346380045AA5B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA710C30279346440045AA5B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA710C31279346440045AA5B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA710C32279346440045AA5B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA97B96425955AFD004C8755 /* Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		FAC7AEA52591128F002FA6B4 /* MonthDayIcon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonthDayIcon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC7AEA72591128F002FA6B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -303,6 +312,9 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				fr,
+				de,
 			);
 			mainGroup = FA3B441522AF0B0F00217CF3;
 			productRefGroup = FA3B441D22AF0B0F00217CF3 /* Products */;
@@ -404,6 +416,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA710C1E279343680045AA5B /* en */,
+				FA710C2B2793462E0045AA5B /* ar */,
+				FA710C2E279346380045AA5B /* fr */,
+				FA710C31279346440045AA5B /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -412,6 +427,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA710C23279343860045AA5B /* en */,
+				FA710C2A2793462E0045AA5B /* ar */,
+				FA710C2D279346380045AA5B /* fr */,
+				FA710C30279346440045AA5B /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -420,6 +438,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA710C28279343E90045AA5B /* en */,
+				FA710C2C2793462E0045AA5B /* ar */,
+				FA710C2F279346380045AA5B /* fr */,
+				FA710C32279346440045AA5B /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -447,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
@@ -516,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
