@@ -130,10 +130,25 @@ NSString *const MDComplicationIdentifierDateOnly = @"null.leptos.MonthDay.compli
             tmp.outerTextProvider = isSwapped ? weekdayProvider : numericalProvider;
             ret = tmp;
         } break;
+        case CLKComplicationFamilyGraphicBezel: {
+            CLKComplicationTemplateGraphicCircularStackText *circ = [CLKComplicationTemplateGraphicCircularStackText new];
+            circ.line1TextProvider = line1TextProvider;
+            circ.line2TextProvider = line2TextProvider;
+            
+            CLKComplicationTemplateGraphicBezelCircularText *tmp = [CLKComplicationTemplateGraphicBezelCircularText new];
+            tmp.circularTemplate = circ;
+            ret = tmp;
+        } break;
         case CLKComplicationFamilyGraphicCircular: {
             CLKComplicationTemplateGraphicCircularStackText *tmp = [CLKComplicationTemplateGraphicCircularStackText new];
             tmp.line1TextProvider = line1TextProvider;
             tmp.line2TextProvider = line2TextProvider;
+            ret = tmp;
+        } break;
+        case CLKComplicationFamilyGraphicRectangular: {
+            CLKComplicationTemplateGraphicRectangularStandardBody *tmp = [CLKComplicationTemplateGraphicRectangularStandardBody new];
+            tmp.headerTextProvider = line1TextProvider;
+            tmp.body1TextProvider = line2TextProvider;
             ret = tmp;
         } break;
         case CLKComplicationFamilyGraphicExtraLarge: {
@@ -144,10 +159,6 @@ NSString *const MDComplicationIdentifierDateOnly = @"null.leptos.MonthDay.compli
                 ret = tmp;
             }
         } break;
-        case CLKComplicationFamilyGraphicBezel:
-        case CLKComplicationFamilyGraphicRectangular:
-            NSLog(@"Unsupported case: %ld", (long)family);
-            break;
         default:
             NSLog(@"Unknown case: %ld", (long)family);
             break;
@@ -174,7 +185,9 @@ NSString *const MDComplicationIdentifierDateOnly = @"null.leptos.MonthDay.compli
             @(CLKComplicationFamilyCircularSmall),
             @(CLKComplicationFamilyExtraLarge),
             @(CLKComplicationFamilyGraphicCorner),
+            @(CLKComplicationFamilyGraphicBezel),
             @(CLKComplicationFamilyGraphicCircular),
+            @(CLKComplicationFamilyGraphicRectangular),
             @(CLKComplicationFamilyGraphicExtraLarge)
         ]],
         
@@ -190,7 +203,9 @@ NSString *const MDComplicationIdentifierDateOnly = @"null.leptos.MonthDay.compli
             @(CLKComplicationFamilyCircularSmall),
             @(CLKComplicationFamilyExtraLarge),
             @(CLKComplicationFamilyGraphicCorner),
+            @(CLKComplicationFamilyGraphicBezel),
             @(CLKComplicationFamilyGraphicCircular),
+            @(CLKComplicationFamilyGraphicRectangular),
             @(CLKComplicationFamilyGraphicExtraLarge)
         ]],
         
