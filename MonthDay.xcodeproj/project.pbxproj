@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		FA3B442122AF0B0F00217CF3 /* nanoMonthDay.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FA3B442022AF0B0F00217CF3 /* nanoMonthDay.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FA3B442722AF0B0F00217CF3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3B442522AF0B0F00217CF3 /* Interface.storyboard */; };
 		FA3B442922AF0B1200217CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3B442822AF0B1200217CF3 /* Assets.xcassets */; };
-		FA3B443022AF0B1200217CF3 /* nanoMonthDayExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA3B442F22AF0B1200217CF3 /* nanoMonthDayExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA3B443022AF0B1200217CF3 /* nanoMonthDayExt.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FA3B442F22AF0B1200217CF3 /* nanoMonthDayExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FA3B443622AF0B1200217CF3 /* MDInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3B443522AF0B1200217CF3 /* MDInterfaceController.m */; };
 		FA3B443922AF0B1200217CF3 /* MDExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3B443822AF0B1200217CF3 /* MDExtensionDelegate.m */; };
 		FA3B443C22AF0B1200217CF3 /* MDComplicationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3B443B22AF0B1200217CF3 /* MDComplicationSource.m */; };
@@ -42,15 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FA3B444522AF0B1300217CF3 /* Embed App Extensions */ = {
+		FA3B444522AF0B1300217CF3 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FA3B443022AF0B1200217CF3 /* nanoMonthDayExt.appex in Embed App Extensions */,
+				FA3B443022AF0B1200217CF3 /* nanoMonthDayExt.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FA3B444922AF0B1300217CF3 /* Embed Watch Content */ = {
@@ -235,7 +235,7 @@
 			buildConfigurationList = FA3B444622AF0B1300217CF3 /* Build configuration list for PBXNativeTarget "nanoMonthDay" */;
 			buildPhases = (
 				FA3B441E22AF0B0F00217CF3 /* Resources */,
-				FA3B444522AF0B1300217CF3 /* Embed App Extensions */,
+				FA3B444522AF0B1300217CF3 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -287,8 +287,9 @@
 		FA3B441622AF0B0F00217CF3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				CLASSPREFIX = MD;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 2660;
 				ORGANIZATIONNAME = Leptos;
 				TargetAttributes = {
 					FA3B441B22AF0B0F00217CF3 = {
@@ -501,10 +502,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -524,7 +526,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -570,10 +572,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -587,7 +590,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
