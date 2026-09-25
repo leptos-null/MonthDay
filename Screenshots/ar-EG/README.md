@@ -1,14 +1,11 @@
 ## Arabic, Egypt
 
 Screenshots from
-Apple Watch Series 6 - 44mm
-on watchOS 8.3
+Apple Watch Series 11 - 42mm
+on watchOS 26.5
 
 ![app](0_app.png)
 ![Count Up](1_Count_Up.png)
-![Modular](2_Modular.png)
+![Modular Compact](2_Modular_Compact.png)
 ![X-Large](3_X-Large.png)
-![Modular Compact](4_Modular_Compact.png)
-![Numerals](5_Numerals.png)
-![Simple](6_Simple.png)
-![Color](7_Color.png)
+![Utility](4_Utility.png)
