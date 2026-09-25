@@ -1,7 +1,7 @@
 ## Screenshots
 
 Screenshots from
-Apple Watch Series 11 - 42mm
+Apple Watch Series 11 - 46mm
 on watchOS 26.5
 
 | Locale | app | Count Up | Modular Compact | X-Large | Utility |
